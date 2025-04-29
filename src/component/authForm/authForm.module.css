@@ -1,0 +1,232 @@
+.authContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+/* Giới hạn phạm vi CSS trong AuthForm */
+.authContainer .container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.authContainer .formContainer {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.authContainer .signIn {
+    left: 0;
+    z-index: 2;
+}
+
+.authContainer .signUp {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.authContainer .containerActive .signIn {
+    transform: translateX(100%);
+}
+
+.authContainer .containerActive .signUp {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.authContainer .toggleContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0px 10px 10px 0;
+    z-index: 1000;
+}
+
+.authContainer .containerActive .toggleContainer {
+    transform: translateX(-100%);
+    border-radius: 10px 0 0 10px;
+}
+
+.authContainer .toggle {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    color: #fff;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.authContainer .containerActive .toggle {
+    transform: translateX(50%);
+}
+
+.authContainer .togglePanel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.authContainer .toggleLeft {
+    transform: translateX(-200%);
+}
+
+.authContainer .containerActive .toggleLeft {
+    transform: translateX(0);
+}
+
+.authContainer .toggleRight {
+    right: 0;
+    transform: translateX(0);
+}
+
+.authContainer .containerActive .toggleRight {
+    transform: translateX(200%);
+}
+
+.authContainer form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.authContainer h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.authContainer input {
+    background-color: #f6f5f7;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.authContainer input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(81, 45, 168, 0.5);
+}
+
+.authContainer button {
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 45px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.authContainer button:active {
+    transform: scale(0.95);
+}
+
+.authContainer button:focus {
+    outline: none;
+}
+
+.authContainer button.hidden {
+    background: transparent;
+    border: 2px solid #fff;
+    margin-top: 20px;
+}
+
+.authContainer .socialIcons {
+    margin: 20px 0;
+    display: flex;
+}
+
+.authContainer .socialIcons a {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.authContainer .socialIcons a:hover {
+    color: #512da8;
+    border-color: #512da8;
+}
+
+.authContainer span {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.authContainer a {
+    color: #512da8;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.authContainer a:hover {
+    text-decoration: underline;
+}
+
+.authContainer p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px 0 30px;
+}
